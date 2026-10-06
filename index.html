@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dreamly – Vision Board &amp; Ideas</title>
-<meta name="description" content="Dreamly is an iPhone app that helps you dream — and keep your dreams in front of you. Visions, vision boards, regular reviews, ideas and the steps to make them happen."/>
+<meta name="description" content="Dreamly is an iPhone app that helps you dream — and keep your dreams in front of you. Visions for your life, family, health, career and kids; vision boards; guided reviews; ideas captured by voice or shared from LinkedIn and X; and the steps to make them happen. No account, no ads."/>
 <meta property="og:title" content="Dreamly – Vision Board &amp; Ideas"/>
 <meta property="og:description" content="Help you dream — and keep your dreams in front of you. Dream it. Capture it. Do it."/>
 <meta property="og:type" content="website"/>
@@ -55,6 +55,10 @@
   .feature p{color:var(--soft);font-size:17px}
   .feature p strong{color:var(--ink)}
 
+  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .tile{background:var(--card);border-radius:18px;padding:18px 18px 16px;box-shadow:0 1px 2px rgba(20,33,61,.04),0 6px 18px rgba(20,33,61,.06);display:flex;flex-direction:column;gap:4px}
+  .tile .icon{font-size:24px;line-height:1.2}
+  .tile span{color:var(--soft);font-size:15px;line-height:1.5}
   .moments{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
   .moment{background:var(--card);border-radius:16px;padding:14px 16px;font-weight:650;box-shadow:0 1px 2px rgba(20,33,61,.04),0 6px 18px rgba(20,33,61,.06)}
 
@@ -85,6 +89,11 @@
     .feature.flip .shot{order:0}
     .phone.sm{max-width:220px}
     .moments{grid-template-columns:1fr}
+    .more{grid-template-columns:1fr 1fr;gap:10px}
+  }
+  @media (max-width:520px){
+    .more{grid-template-columns:1fr}
+    .tile{padding:14px}
     .support{grid-template-columns:1fr}
     .card{padding:24px 20px}
   }
@@ -130,6 +139,7 @@
         <div class="icon">🌅</div>
         <h3>Visions</h3>
         <p>A vision is a picture of the future you’re building, in one area of life: <strong>life, family, health, wealth, career, kids, your team or company</strong> — or an area of your own. Describe it in your own words, add the quotes that keep you going, and pin pictures to it.</p>
+        <p>Write a vision <strong>for your kids — and give them space to write their own</strong>. Your quotes come back to you as the <strong>quote of the day</strong> on your Today screen.</p>
       </div>
       <img class="phone sm shot" src="img/vision.jpg" alt="A vision with its statement, review reminder and supporting quotes" loading="lazy" width="250" height="543"/>
     </div>
@@ -140,7 +150,7 @@
         <h3>Vision boards</h3>
         <p>Every vision has its own <strong>vision board</strong> — the pictures that make that future feel real. Your dream home. The trip. The finish line.</p>
         <p>Make <strong>boards of your own</strong> too — “Dream home”, “2027 travel” — mixing pictures however you like.</p>
-        <p>And Dreamly <strong>combines all your visions into one board</strong> automatically: your whole future, on one screen.</p>
+        <p>And Dreamly <strong>combines all your visions into one board</strong> automatically: your whole future, on one screen. Open any board full screen, or <strong>share it as an image</strong> with your family or team.</p>
       </div>
       <img class="phone sm shot" src="img/all-visions.jpg" alt="The combined board, All visions, built automatically from every vision" loading="lazy" width="250" height="543"/>
     </div>
@@ -159,7 +169,8 @@
       <div>
         <div class="icon">💡</div>
         <h3>Ideas</h3>
-        <p>Ideas arrive anywhere — in the shower, on a walk, scrolling LinkedIn or X. <strong>Capture them in seconds</strong> by typing, by voice, or by sharing a post straight into Dreamly.</p>
+        <p>Ideas arrive anywhere — in the shower, on a walk, scrolling LinkedIn or X. <strong>Capture them in seconds</strong> by typing, by voice, or by sharing a post straight in from <strong>LinkedIn, X, Reddit, Facebook, Instagram or Threads</strong> — screenshots and photos too.</p>
+        <p>Or just say <strong>“Capture an idea in Dreamly”</strong> to Siri, or put it on the Action button.</p>
         <p>An idea can <strong>stand on its own, or be tied to the vision it serves</strong>.</p>
       </div>
       <img class="phone sm shot" src="img/today.jpg" alt="The Today screen: capture a spark, quote of the day, a vision ready for review and next steps" loading="lazy" width="250" height="543"/>
@@ -169,13 +180,19 @@
       <div>
         <div class="icon">✅</div>
         <h3>Steps</h3>
-        <p>An idea only matters once you act on it. <strong>Break it into steps</strong> with target dates and notes, watch your progress, and get a gentle nudge to keep going.</p>
+        <p>An idea only matters once you act on it. <strong>Break it into steps</strong> with target dates and notes, and move it from <strong>Spark</strong> to <strong>Planning</strong>, <strong>In progress</strong> and <strong>Done</strong>.</p>
+        <p>Dreamly gives you a gentle nudge to keep going, and reminds you when a step’s target date arrives.</p>
       </div>
       <img class="phone sm shot" src="img/idea-steps.jpg" alt="An idea with its next step, progress, keep-going reminder and plan" loading="lazy" width="250" height="543"/>
     </div>
 
-    <div class="narrow" style="text-align:center;margin-top:26px">
-      <span class="pill">🔒 Your dreams stay yours — stored on your device, no ads, no tracking, nothing sold.</span>
+    <div class="more">
+      <div class="tile"><div class="icon">🔎</div><strong>Find anything</strong><span>Search every word you’ve written — titles, notes, quotes, steps, comments, tags and links.</span></div>
+      <div class="tile"><div class="icon">🏷</div><strong>Tags on everything</strong><span>Plain words like Health, Leadership or Urgent — shared across ideas and visions.</span></div>
+      <div class="tile"><div class="icon">📤</div><strong>Share with your people</strong><span>Send a vision to your team or family, or an idea — plan, links and pictures intact.</span></div>
+      <div class="tile"><div class="icon">🎙</div><strong>Say it, don’t type it</strong><span>Every text field can be dictated. Pause to think — Dreamly keeps every word.</span></div>
+      <div class="tile"><div class="icon">🔒</div><strong>Quiet by design</strong><span>No account, no sign-up, no ads, nothing collected. Lock it with Face ID.</span></div>
+      <div class="tile"><div class="icon">☁️</div><strong>On all your devices</strong><span>Optional iCloud backup or full sync — your own iCloud, nobody else’s.</span></div>
     </div>
   </section>
 
@@ -194,7 +211,7 @@
     <p class="big" style="color:var(--blue)">It was a lack of space — and a place to keep it.</p>
     <p style="margin-top:18px;font-size:17px;color:var(--soft)">Dreamly keeps your ambitions in front of you — long after the conference ends. My family and I built it because we wanted this tool ourselves. I hope it helps you dream bigger, too.</p>
     <p class="tagline">Dream it. Capture it. <span>Do it.</span></p>
-    <p class="fine">Free to start — your first 10 ideas and visions are free. One-time unlock, no subscription.</p>
+    <p class="fine">No account. No ads. Free to start — your first 10 ideas and visions are free. One-time unlock, no subscription.</p>
   </section>
 
   <section class="narrow">

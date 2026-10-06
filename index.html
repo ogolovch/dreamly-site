@@ -3,47 +3,215 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Dreamly — Capture Ideas and Vision</title>
+<title>Dreamly – Vision Board &amp; Ideas</title>
+<meta name="description" content="Dreamly is an iPhone app that helps you dream — and keep your dreams in front of you. Visions, vision boards, regular reviews, ideas and the steps to make them happen."/>
+<meta property="og:title" content="Dreamly – Vision Board &amp; Ideas"/>
+<meta property="og:description" content="Help you dream — and keep your dreams in front of you. Dream it. Capture it. Do it."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ogolovch.github.io/dreamly-site/"/>
+<meta property="og:image" content="https://ogolovch.github.io/dreamly-site/img/all-visions.jpg"/>
 <style>
   :root{--ink:#14213D;--soft:#5B6A86;--blue:#2F6BFF;--sky:#4FB8FF;--paper:#EDF3FC;--card:#fff;--line:#E3ECFA}
   @media (prefers-color-scheme: dark){:root{--ink:#EAF1FF;--soft:#9FB0CF;--blue:#6FA0FF;--paper:#0A1224;--card:#131F38;--line:#1D2B4A}}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;color:var(--ink);line-height:1.6;
     background:radial-gradient(900px 500px at 15% -5%,rgba(79,184,255,.22),transparent 55%),radial-gradient(800px 600px at 100% 0,rgba(47,107,255,.16),transparent 50%),var(--paper);
-    min-height:100vh;padding:48px 20px}
-  .wrap{max-width:680px;margin:0 auto}
-  .logo{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-  .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(45deg,#1437B8,#2F6BFF 60%,#38D0E8);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 8px 20px rgba(47,107,255,.35)}
-  h1{font-size:30px;letter-spacing:-.5px;margin:18px 0 4px}
-  .updated{color:var(--soft);font-size:14px;margin-bottom:26px}
-  .card{background:var(--card);border-radius:20px;padding:26px 28px;box-shadow:0 1px 2px rgba(20,33,61,.04),0 10px 30px rgba(20,33,61,.08)}
-  h2{font-size:18px;margin:24px 0 8px}h2:first-child{margin-top:0}
-  p{margin:0 0 12px}ul{margin:0 0 12px 20px}li{margin:4px 0}
-  .pill{display:inline-block;background:rgba(47,107,255,.1);color:var(--blue);font-weight:700;font-size:13px;padding:5px 12px;border-radius:20px;margin-bottom:18px}
+    min-height:100vh;padding:40px 16px 48px}
+  .wrap{max-width:920px;margin:0 auto}
+  .narrow{max-width:680px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:12px}
+  .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(45deg,#1437B8,#2F6BFF 60%,#38D0E8);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(47,107,255,.35)}
   a{color:var(--blue)}
-  details{border-top:1px solid var(--line);padding:14px 0}details:first-of-type{border-top:0;padding-top:0}
-  summary{font-weight:650;cursor:pointer}
-  .btn{display:inline-block;background:linear-gradient(135deg,#2F6BFF,#4FB8FF);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:14px;margin-top:8px}
-  footer{color:var(--soft);font-size:13px;text-align:center;margin-top:28px}
+  p{margin:0 0 14px}
+  .card{background:var(--card);border-radius:22px;padding:28px 30px;box-shadow:0 1px 2px rgba(20,33,61,.04),0 10px 30px rgba(20,33,61,.08)}
+  .pill{display:inline-block;background:rgba(47,107,255,.1);color:var(--blue);font-weight:700;font-size:13px;padding:5px 12px;border-radius:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#2F6BFF,#4FB8FF);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:14px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue)}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;margin:34px 0 56px}
+  .hero h1{font-size:46px;line-height:1.08;letter-spacing:-1.2px;margin:14px 0}
+  .hero h1 span{background:linear-gradient(90deg,#2F6BFF,#38D0E8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:19px;color:var(--soft);margin-bottom:22px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+  .soon{font-size:14px;color:var(--soft)}
+  .phone{width:100%;height:auto;max-width:300px;margin:0 auto;display:block;border-radius:38px;border:8px solid #0B1430;box-shadow:0 24px 60px rgba(20,33,61,.28);background:#0B1430}
+  .phone.sm{max-width:250px;border-radius:32px;border-width:7px}
+
+  /* Story */
+  .story{font-size:18px}
+  .story p{margin-bottom:16px}
+  .story .big{font-size:24px;font-weight:750;letter-spacing:-.3px;line-height:1.35}
+  section{margin:0 0 56px}
+  section.narrow{margin:0 auto 56px}
+  h2{font-size:32px;letter-spacing:-.6px;line-height:1.15;margin:8px 0 12px}
+  h3{font-size:22px;letter-spacing:-.3px;margin:6px 0 8px}
+
+  /* How it works */
+  .feature{display:grid;grid-template-columns:1fr 260px;gap:34px;align-items:center;margin-bottom:22px}
+  .feature.flip{grid-template-columns:260px 1fr}
+  .feature.flip .shot{order:-1}
+  .feature .icon{font-size:30px;line-height:1}
+  .feature p{color:var(--soft);font-size:17px}
+  .feature p strong{color:var(--ink)}
+
+  .moments{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
+  .moment{background:var(--card);border-radius:16px;padding:14px 16px;font-weight:650;box-shadow:0 1px 2px rgba(20,33,61,.04),0 6px 18px rgba(20,33,61,.06)}
+
+  .closing{text-align:center}
+  .closing .big{font-size:26px;font-weight:750;letter-spacing:-.4px;line-height:1.3;margin-bottom:6px}
+  .tagline{font-size:20px;font-weight:800;margin-top:18px}
+  .tagline span{color:var(--blue)}
+
+  .support{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+  .support .buttons{display:flex;flex-direction:column;gap:12px}
+  .support .btn{white-space:nowrap}
+  .coffee{background:#FFDD00;color:#14213D}
+  .crypto{background:#1D2B4A;color:#fff}
+  @media (prefers-color-scheme: dark){.crypto{background:#EAF1FF;color:#0A1224}}
+  .fine{font-size:13px;color:var(--soft);margin-top:4px}
+
+  footer{color:var(--soft);font-size:13px;text-align:center;margin-top:12px}
+
+  @media (max-width:760px){
+    body{padding-top:28px}
+    .hero{grid-template-columns:1fr;gap:28px;margin:24px 0 44px}
+    .hero h1{font-size:36px}
+    .lead{font-size:17px}
+    .phone{max-width:240px}
+    .story{font-size:17px}.story .big{font-size:21px}
+    h2{font-size:27px}
+    .feature,.feature.flip{grid-template-columns:1fr;gap:18px}
+    .feature.flip .shot{order:0}
+    .phone.sm{max-width:220px}
+    .moments{grid-template-columns:1fr}
+    .support{grid-template-columns:1fr}
+    .card{padding:24px 20px}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="logo"><div class="mark"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M1.5 12C4 7 8 5 12 5s8 2 10.5 7C20 17 16 19 12 19S4 17 1.5 12z" fill="#fff"/><circle cx="12" cy="12" r="4.2" fill="#1E4FD8"/><path d="M12 9.2l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z" fill="#fff"/></svg></div><strong style="font-size:20px">Dreamly</strong></div></div>
-  <h1>Capture Ideas and Vision</h1>
-  <div class="updated">A calm iPhone app for the ideas you have and the future you're building.</div>
-  <div class="card">
-    <span class="pill">Private by design — no account, no ads, nothing collected.</span>
-    <h2>Visions</h2>
-    <p>Write visions for your life, health, wealth, career, a project, your team, your company — and for (and with) your kids. Add unlimited supporting quotes, build a vision board from photos, and get reminders to review them daily, weekly, monthly, quarterly or on the dates you choose.</p>
-    <h2>Ideas</h2>
-    <p>Capture ideas by typing, dictating, or sharing a post straight from LinkedIn, X, Reddit, Facebook or Instagram. Rank them, tag them, set inception and expiry dates, and turn them into plans with steps, target dates and comments. Dreamly nudges you while an idea is in progress.</p>
-    <h2>Find anything</h2>
-    <p>Search every word you've written — titles, notes, quotes, steps, comments, tags and links.</p>
-    <h2>Free to start</h2>
-    <p>Your first 10 ideas and visions are free. One $2.99 purchase unlocks unlimited, forever. No subscription.</p>
-    <a class="btn" href="support.html">Help &amp; support</a>
-  </div>
+
+  <div class="logo"><div class="mark"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12C4 7 8 5 12 5s8 2 10.5 7C20 17 16 19 12 19S4 17 1.5 12z" fill="#fff"/><circle cx="12" cy="12" r="4.2" fill="#1E4FD8"/><path d="M12 9.2l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z" fill="#fff"/></svg></div><strong style="font-size:20px">Dreamly</strong></div>
+
+  <header class="hero">
+    <div>
+      <span class="pill">Vision Board &amp; Ideas · for iPhone</span>
+      <h1>Help you dream — and keep your dreams <span>in front of you.</span></h1>
+      <p class="lead">Visions for your life, family, health, career and kids. Vision boards that make them feel real. Regular reviews that keep them alive. And ideas, with the steps to make them happen.</p>
+      <div class="cta">
+        <a class="btn" href="#how">See how it works</a>
+        <span class="soon">Coming soon to the App Store</span>
+      </div>
+    </div>
+    <img class="phone" src="img/boards.jpg" alt="Dreamly's Boards screen: every vision's board, the combined All visions board, and boards of your own" width="300" height="652"/>
+  </header>
+
+  <section class="narrow story">
+    <p class="eyebrow">Why I built it</p>
+    <p class="big">For years, I wanted a tool that helped me dream — and actually come back to those dreams.</p>
+    <p>Somewhere along the way, I noticed something about myself and the people around me: <strong>we were dreaming less than we used to.</strong></p>
+    <p>Days fill up. Calendars fill up. And the big questions — <em>Where is my family heading? What do I want for my health, my career, my kids?</em> — quietly get pushed to “someday.”</p>
+    <p>But dreaming isn’t a luxury. It’s critical. A clear vision for your life, your family, your health, your career and your kids is what turns busy days into meaningful ones.</p>
+    <p>As a family, we would fly to self-leadership conferences just to make space for this — to build vision boards, clarify what we wanted, and meet like-minded people doing the same.</p>
+    <p>Those few days were powerful. Then we’d fly home, the vision board would go in a drawer, and everyday life took over again.</p>
+    <p class="big">So I built Dreamly. An iPhone app with one job: help you dream — and keep your dreams in front of you.</p>
+  </section>
+
+  <section id="how">
+    <div class="narrow" style="text-align:center;margin-bottom:28px">
+      <p class="eyebrow">How it works</p>
+      <h2>From a dream, to a plan, to the next step.</h2>
+    </div>
+
+    <div class="feature card">
+      <div>
+        <div class="icon">🌅</div>
+        <h3>Visions</h3>
+        <p>A vision is a picture of the future you’re building, in one area of life: <strong>life, family, health, wealth, career, kids, your team or company</strong> — or an area of your own. Describe it in your own words, add the quotes that keep you going, and pin pictures to it.</p>
+      </div>
+      <img class="phone sm shot" src="img/vision.jpg" alt="A vision with its statement, review reminder and supporting quotes" loading="lazy" width="250" height="543"/>
+    </div>
+
+    <div class="feature card flip">
+      <div>
+        <div class="icon">🖼</div>
+        <h3>Vision boards</h3>
+        <p>Every vision has its own <strong>vision board</strong> — the pictures that make that future feel real. Your dream home. The trip. The finish line.</p>
+        <p>Make <strong>boards of your own</strong> too — “Dream home”, “2027 travel” — mixing pictures however you like.</p>
+        <p>And Dreamly <strong>combines all your visions into one board</strong> automatically: your whole future, on one screen.</p>
+      </div>
+      <img class="phone sm shot" src="img/all-visions.jpg" alt="The combined board, All visions, built automatically from every vision" loading="lazy" width="250" height="543"/>
+    </div>
+
+    <div class="feature card">
+      <div>
+        <div class="icon">🔁</div>
+        <h3>Review</h3>
+        <p>A vision you never look at is just a wish. <strong>Reviewing your visions regularly</strong> is what keeps them alive — daily, weekly, monthly, quarterly or on dates you choose.</p>
+        <p>Dreamly reminds you when a review is due, and <strong>one Review button</strong> walks you through each vision, its pictures and quotes, with room to jot down what moved you closer and what’s next.</p>
+      </div>
+      <img class="phone sm shot" src="img/review.jpg" alt="A guided vision review with the vision's board, statement and quotes" loading="lazy" width="250" height="543"/>
+    </div>
+
+    <div class="feature card flip">
+      <div>
+        <div class="icon">💡</div>
+        <h3>Ideas</h3>
+        <p>Ideas arrive anywhere — in the shower, on a walk, scrolling LinkedIn or X. <strong>Capture them in seconds</strong> by typing, by voice, or by sharing a post straight into Dreamly.</p>
+        <p>An idea can <strong>stand on its own, or be tied to the vision it serves</strong>.</p>
+      </div>
+      <img class="phone sm shot" src="img/today.jpg" alt="The Today screen: capture a spark, quote of the day, a vision ready for review and next steps" loading="lazy" width="250" height="543"/>
+    </div>
+
+    <div class="feature card">
+      <div>
+        <div class="icon">✅</div>
+        <h3>Steps</h3>
+        <p>An idea only matters once you act on it. <strong>Break it into steps</strong> with target dates and notes, watch your progress, and get a gentle nudge to keep going.</p>
+      </div>
+      <img class="phone sm shot" src="img/idea-steps.jpg" alt="An idea with its next step, progress, keep-going reminder and plan" loading="lazy" width="250" height="543"/>
+    </div>
+
+    <div class="narrow" style="text-align:center;margin-top:26px">
+      <span class="pill">🔒 Your dreams stay yours — stored on your device, no ads, no tracking, nothing sold.</span>
+    </div>
+  </section>
+
+  <section class="narrow">
+    <p class="eyebrow" style="text-align:center">Made for moments like these</p>
+    <div class="moments">
+      <div class="moment">🎉 A new year</div>
+      <div class="moment">💼 A new job</div>
+      <div class="moment">🧒 Kids growing up faster than you expected</div>
+      <div class="moment">🎤 Just back from a conference full of inspiration</div>
+    </div>
+  </section>
+
+  <section class="narrow closing">
+    <p class="big">Dreaming less was never a lack of ambition.</p>
+    <p class="big" style="color:var(--blue)">It was a lack of space — and a place to keep it.</p>
+    <p style="margin-top:18px;font-size:17px;color:var(--soft)">Dreamly keeps your ambitions in front of you — long after the conference ends. My family and I built it because we wanted this tool ourselves. I hope it helps you dream bigger, too.</p>
+    <p class="tagline">Dream it. Capture it. <span>Do it.</span></p>
+    <p class="fine">Free to start — your first 10 ideas and visions are free. One-time unlock, no subscription.</p>
+  </section>
+
+  <section class="narrow">
+    <div class="card support">
+      <div>
+        <p class="eyebrow">Support an independent maker</p>
+        <h3>Enjoying Dreamly?</h3>
+        <p style="color:var(--soft);margin:0">Dreamly is made by one family — no investors, no ads, no data sold. If it helps you dream, a small tip keeps it growing.</p>
+      </div>
+      <div class="buttons">
+        <a class="btn coffee" href="https://buymeacoffee.com/realoleksiy" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+        <a class="btn crypto" href="https://nowpayments.io/donation/realoleksiy" target="_blank" rel="noopener">🪙 Donate with crypto</a>
+        <p class="fine" style="text-align:center;margin:0">Crypto donations via NOWPayments</p>
+      </div>
+    </div>
+  </section>
+
   <footer>© 2026 PolarEdge Data Centers Inc. · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></footer>
 </div>
 </body>
